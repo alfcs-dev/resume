@@ -1,0 +1,34 @@
+{
+  "name": "alfcastaneda.com",
+  "description": "Update version for personal website using angularjs and material design",
+  "main": "dist/app.js",
+  "authors": [
+    "Alfredo Castañeda"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "material design",
+    "website",
+    "web",
+    "development"
+  ],
+  "homepage": "alfcastaneda.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-ui-router": "^0.3.1",
+    "angular-material": "^1.0.9",
+    "angular-i18n": "^1.5.6",
+    "angular-translate": "^2.11.0",
+    "angular-breadcrumb": "^0.4.1",
+    "material-design-icons": "^2.2.3"
+  }
+}

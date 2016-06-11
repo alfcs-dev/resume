@@ -75,14 +75,32 @@ module.exports = function(grunt) {
         }]
       }
     },
+    imagemin: {
+      dev: {
+        files: [{
+          expand: true,
+          src: '**/*',
+          cwd: 'src/img',
+          dest: 'dist/img'
+        }]
+      }
+    },
     clean: {
-      all: ['.tmpjs', '.tmpcss']
+      all: ['.tmpjs', '.tmpcss'],
+      js: ['.tmpjs'],
+      css: ['.tmpcss'],
     },
     connect: {
-      server: {
+      run: {
         options: {
           port: 9001,
           keepalive: true
+        }
+      },
+      build: {
+        options: {
+          port: 9001,
+          open: true
         }
       }
     },
@@ -107,6 +125,13 @@ module.exports = function(grunt) {
       }
     },
   });
-  grunt.registerTask('js', ['ngAnnotate', 'concat:dev', 'clean']);
-  grunt.registerTask('css', ['sass', 'cssmin', 'clean']);
+  grunt.registerTask('js', ['ngAnnotate', 'concat:dev', 'clean:js']);
+  grunt.registerTask('jsProd', ['ngAnnotate', 'uglify', 'clean:js']);
+  grunt.registerTask('css', ['sass', 'cssmin', 'clean:css']);
+  grunt.registerTask('default', ['uglify:vendor', 'js', 'css', 'htmlmin',
+    'imagemin', 'connect:build', 'watch'
+  ]);
+  grunt.registerTask('prod', ['jsProd', 'css', 'htmlmin', 'imagemin',
+    'connect:build', 'watch'
+  ]);
 }

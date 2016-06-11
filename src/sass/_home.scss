@@ -5,7 +5,8 @@ html, body{
 .mainContainer{
   height: 100%;
   width: 100%;
-  background: $basicBackground;
+  background-color: $basicBackground;
+  background: url(../img/back.png);
 
 }
 .homeContainer{

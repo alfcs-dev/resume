@@ -1,7 +1,6 @@
 'use strict';
 module.exports = function(grunt) {
   require('time-grunt')(grunt);
-  require('load-grunt-tasks')(grunt);
   grunt.initConfig({
     ngAnnotate: {
       options: {
@@ -125,6 +124,21 @@ module.exports = function(grunt) {
       }
     },
   });
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-ng-annotate');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-angular-templates');
+
   grunt.registerTask('js', ['ngAnnotate', 'concat:dev', 'clean:js']);
   grunt.registerTask('jsProd', ['ngAnnotate', 'uglify', 'clean:js']);
   grunt.registerTask('css', ['sass', 'cssmin', 'clean:css']);

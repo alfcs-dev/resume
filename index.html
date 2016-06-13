@@ -9,8 +9,32 @@
   <base href="/" />
 </head>
 <body>
+  <section class="navBar">
+    <md-fab-toolbar md-open="demo.isOpen" count="demo.count"
+                    md-direction="right">
+      <md-fab-trigger class="align-with-text">
+        <md-button aria-label="menu" class="md-fab md-primary">
+          <md-icon md-font-set="material-icons">menu</md-icon>
+        </md-button>
+      </md-fab-trigger>
+      <md-toolbar>
+        <md-fab-actions class="md-toolbar-tools">
+          <md-button aria-label="comment" class="md-icon-button">
+            <md-icon md-font-set="material-icons">comment</md-icon>
+          </md-button>
+          <md-button aria-label="label" class="md-icon-button">
+            <md-icon md-font-set="material-icons">label</md-icon>
+          </md-button>
+          <md-button aria-label="photo" class="md-icon-button">
+            <md-icon md-font-set="material-icons">photo</md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-toolbar>
+    </md-fab-toolbar>
+  </section>
+
   <section class="mainContainer">
-    <div ui-view></div>
+    <div class="viewContainer" ui-view></div>
   </section>
 
   <script src="dist/js/vendor.js"></script>

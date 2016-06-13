@@ -38,7 +38,7 @@
     "karma-jasmine": "^1.0.2",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "load-grunt-tasks": "^3.5.0",
-    "phantomjs-prebuilt'": "*",
+    "phantomjs-prebuilt": "*",
     "time-grunt": "^1.3.0",
     "wiredep": "^4.0.0"
   },

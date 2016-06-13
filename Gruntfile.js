@@ -1,4 +1,4 @@
-'use strict';
+'use strict()';
 module.exports = function(grunt) {
   require('time-grunt')(grunt);
   grunt.initConfig({
@@ -92,13 +92,13 @@ module.exports = function(grunt) {
     connect: {
       run: {
         options: {
-          port: 9001,
+          port: 9011,
           keepalive: true
         }
       },
       build: {
         options: {
-          port: 9001,
+          port: 9011,
           open: true
         }
       }

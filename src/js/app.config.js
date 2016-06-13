@@ -17,9 +17,8 @@
         parent: 'site',
         url: '/',
         templateUrl: viewsPath + 'home.html',
-        controller: function($scope) {
-          console.log($scope);
-        },
+        controller: 'homeCtrl',
+        controllerAs: 'vm',
         ncyBreadcrumb: {
           skip: 'Home Page'
         },

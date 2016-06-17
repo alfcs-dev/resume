@@ -33,11 +33,12 @@
     </nav>
     <section class="mainContainer">
       <div class="langBtns">
+        <span translate="TITLE"></span>
         <md-button class="md-fab md-mini md-primary" ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">
             {{lang.code}}
         </md-button>
       </div>
-  
+
       <div class="viewContainer" ui-view></div>
     </section>
     </main>

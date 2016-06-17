@@ -5,7 +5,7 @@ Personal resume using, angularjs, angular-material and angular translate
 ------------------------------------------------------------------------
 
 This is the second version I create as a web profile, it contains my basic info, 
-a summary of my experience as an introduction, and sections in which I describe my last
+a summary of my experience as an introduction, and sections in which I describe my latest
 jobs, projects and skills.
 
 ### To use it:

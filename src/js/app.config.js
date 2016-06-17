@@ -3,20 +3,16 @@
   angular.module('app').config(configFn);
 
   function configFn ($translateProvider) {
-    $translateProvider.translations('en', {
-      TITLE: 'Hello',
-      FOO: 'This is a paragraph.',
+    
+    $translateProvider.fallbackLanguage('en');
 
-    }).translations('de', {
-      TITLE: 'Hallo',
-      FOO: 'Dies ist ein Paragraph.',
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'dist/translations/locale-',
+      suffix: '.json'
+    });
 
-    }).translations('es', {
-      TITLE: 'Hola',
-      FOO: 'Esto es un parrafo',
-    }).fallbackLanguage('en');
+    $translateProvider.preferredLanguage('en');
 
-    var language = navigator.language || navigator.userLanguage;
-    $translateProvider.preferredLanguage(language);
+    $translateProvider.useLocalStorage();
   }
 })();

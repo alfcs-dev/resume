@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html ng-app="app">
-<head>
-  <meta charset="utf-8" />
-  <title>Alfcastaneda's personal website</title>
-  <link rel="stylesheet" href="dist/css/styles.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
-  <base href="/" />
-</head>
-<body>
-  <section class="navBar">
-    <md-fab-toolbar md-open="demo.isOpen" count="demo.count"
-                    md-direction="right">
-      <md-fab-trigger class="align-with-text">
-        <md-button aria-label="menu" class="md-fab md-primary">
-          <md-icon md-font-set="material-icons">menu</md-icon>
-        </md-button>
-      </md-fab-trigger>
-      <md-toolbar>
-        <md-fab-actions class="md-toolbar-tools">
-          <md-button aria-label="comment" class="md-icon-button">
-            <md-icon md-font-set="material-icons">comment</md-icon>
-          </md-button>
-          <md-button aria-label="label" class="md-icon-button">
-            <md-icon md-font-set="material-icons">label</md-icon>
-          </md-button>
-          <md-button aria-label="photo" class="md-icon-button">
-            <md-icon md-font-set="material-icons">photo</md-icon>
-          </md-button>
-        </md-fab-actions>
+  <head>
+    <meta charset="utf-8" />
+    <title>Alfcastaneda's personal website</title>
+    <link rel="stylesheet" href="dist/css/styles.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+    <base href="/" />
+  </head>
+  <body>
+    <main layout="row" flex ng-controller="indexCtrl as vm">
+    <nav ng-controller="navBarCtrl as vm">
+      <md-sidenav
+      class="md-sidenav-left"
+      md-component-id="left"
+      md-is-locked-open="$mdMedia('gt-md')"
+      md-disable-backdrop
+      md-whiteframe="4">
+      <md-toolbar class="md-theme-indigo">
+      <h1 class="md-toolbar-tools">{{vm.menuTitle}}</h1>
       </md-toolbar>
-    </md-fab-toolbar>
-  </section>
-
-  <section class="mainContainer">
-    <div class="viewContainer" ui-view></div>
-  </section>
-
-  <script src="dist/js/vendor.js"></script>
-  <script src="dist/js/app.min.js"></script>
-</body>
+      <md-content layout-padding>
+      <md-button ng-click="vm.close()" class="md-primary" hide-gt-md>
+      Close Sidenav Left
+      </md-button>
+      <p hide show-gt-md>
+        This sidenav is locked open on your device. To go back to the default behavior,
+        narrow your display.
+      </p>
+      </md-content>
+      </md-sidenav>
+    </nav>
+    <section class="mainContainer">
+      <div class="langBtns">
+        <md-button class="md-fab md-mini md-primary" ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">
+            {{lang.code}}
+        </md-button>
+      </div>
+  
+      <div class="viewContainer" ui-view></div>
+    </section>
+    </main>
+    <script src="dist/js/vendor.js"></script>
+    <script src="dist/js/app.min.js"></script>
+  </body>
 </html>

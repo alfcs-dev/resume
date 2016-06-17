@@ -148,4 +148,4 @@ module.exports = function(grunt) {
   grunt.registerTask('prod', ['jsProd', 'css', 'htmlmin', 'imagemin',
     'connect:build', 'watch'
   ]);
-}
+};

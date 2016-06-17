@@ -1,27 +1,22 @@
-(function() {
+(function () {
   'use strict';
   angular.module('app').config(configFn);
 
-  function configFn($stateProvider, $urlRouterProvider, $locationProvider) {
-    var viewsPath = 'dist/views/';
-    $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/');
-    $stateProvider.state('site', {
-        abstract: true,
-        template: '<ui-view/>',
-        ncyBreadcrumb: {
-          skip: true // Never display this state in breadcrumb.
-        },
-      })
-      .state('home', {
-        parent: 'site',
-        url: '/',
-        templateUrl: viewsPath + 'home.html',
-        controller: 'homeCtrl',
-        controllerAs: 'vm',
-        ncyBreadcrumb: {
-          skip: 'Home Page'
-        },
-      });
+  function configFn ($translateProvider) {
+    $translateProvider.translations('en', {
+      TITLE: 'Hello',
+      FOO: 'This is a paragraph.',
+
+    }).translations('de', {
+      TITLE: 'Hallo',
+      FOO: 'Dies ist ein Paragraph.',
+
+    }).translations('es', {
+      TITLE: 'Hola',
+      FOO: 'Esto es un parrafo',
+    }).fallbackLanguage('en');
+
+    var language = navigator.language || navigator.userLanguage;
+    $translateProvider.preferredLanguage(language);
   }
-}());
+})();

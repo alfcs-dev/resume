@@ -1,8 +1,13 @@
 {
-  "GENERAL":{
-    "BTNS_LANGUAGES": "Sprache",
+  "GENERAL": {
+    "MENU":"MENU",
+    "BTNS": {
+       "LANGUAGES": "SPRACHE"
+    }
   },
-  "PERSONAL_INFO": {
-    "INTRO": "Hallo!"
+  "HOME":{
+  	"INFO":{
+  		"TITLE": "WILLKOMMEN!"
+  	}
   }
 }

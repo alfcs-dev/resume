@@ -1,28 +1,40 @@
 <section flex class="introContainer">
   <md-content flex layout-padding>
-    <div layout="column" layout-fill layout-align="top center">
-    <h2 translate="INTRODUCTION"></h2>
-      <p>
-      The left sidenav will 'lock open' on a medium (>=960px wide) device.
-      </p>
-      <p>
-      The right sidenav will focus on a specific child element.
-      </p>
-      <div>
-        <md-button ng-click="toggleLeft()"
-          class="md-primary" hide-gt-md>
-          Toggle left
+  <div layout="column" layout-fill layout-align="top center">
+    <h1 translate="HOME.INFO.TITLE"></h1>
+    <md-card>
+      <md-card-header>
+        <md-card-avatar>
+          <img class="md-user-avatar" src="dist/img/beard.jpg">
+        </md-card-avatar>
+        <md-card-header-text>
+          <span class="md-title">Title</span>
+          <span class="md-subhead">Sub header</span>
+        </md-card-header-text>
+      </md-card-header>
+      <img ng-src="dist/img/beard.jpg" class="md-card-image" alt="image caption">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card headline</span>
+          <span class="md-subhead">Card subheader</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="start center">
+        <md-button>Action 1</md-button>
+        <md-button>Action 2</md-button>
+        <md-card-icon-actions>
+        <md-button class="md-icon-button" aria-label="icon">
+        <md-icon md-svg-icon="icon"></md-icon>
         </md-button>
-      </div>
-      <div>
-        <md-button ng-click="toggleRight()"
-          ng-hide="isOpenRight()"
-          class="md-primary">
-          Toggle right
-        </md-button>
-      </div>
-    </div>
-    <div flex></div>
+        </md-card-icon-actions>
+      </md-card-actions>
+      <md-card-content>
+        <p>
+          Card content
+        </p>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div flex></div>
   </md-content>
 </section>
-

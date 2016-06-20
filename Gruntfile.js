@@ -117,12 +117,20 @@ module.exports = function(grunt) {
         tasks: ['htmlmin']
       },
       locales: {
-        files: ['resources/languages/**/**/*.json',
-          '!resources/languages/locale-es_DO.json'
-        ],
-        tasks: ['concat:locales', 'copy:devLang', 'beep:3']
+        files: ['src/translations/*.json'],
+        tasks: ['copy:locales']
       }
     },
+    copy: {
+      locales: {
+        files: [{
+          expand: true,
+          src: ['translations/*.json'],
+          dest: 'dist/',
+          cwd: 'src'
+        }]
+      }
+    }
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');

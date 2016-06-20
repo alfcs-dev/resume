@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <title>Alfcastaneda's personal website</title>
     <link rel="stylesheet" href="dist/css/styles.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
     <base href="/" />
   </head>
   <body>
-    <main layout="row" flex ng-controller="indexCtrl as vm">
     <nav ng-controller="navBarCtrl as vm">
       <md-sidenav
       class="md-sidenav-left"
@@ -19,7 +19,7 @@
         <md-toolbar class="md-hue-2">
           <div class="md-toolbar-tools">
             <h2>
-              <span>{{'MENU' | translate}}</span>
+              <span>{{'general.menu.title' | translate}}</span>
             </h2>
             <span flex></span>
             <md-button class="md-icon-button" ng-click="vm.close()">
@@ -30,20 +30,24 @@
 
       </md-sidenav>
     </nav>
-    <section class="mainContainer">
+    <main layout="column" flex ng-controller="indexCtrl as vm">
       <div class="menuBtn">
         <md-button class="md-fab md-mini md-primary"  ng-click="vm.toggleLeft()">
             <md-icon md-font-set="material-icons">menu</md-icon>
         </md-button>
       </div>
       <div class="langBtns">
-        <span>{{ 'GENERAL.BTNS.LANGUAGES' | translate}} : </span>
+        <span>{{ 'general.btns.languages' | translate | uppercase}} : </span>
         <md-button class="md-fab md-mini md-primary" ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">
         {{lang.code}}
         </md-button>
       </div>
       <div class="viewContainer" ui-view></div>
-    </section>
+      <div class="bottom-sheet-demo inset" >
+      <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">{{'general.btns.contact' | translate}}</md-button>
+      </div>
+
+
     </main>
     <script src="dist/js/vendor.js"></script>
     <script src="dist/js/app.min.js"></script>

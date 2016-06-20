@@ -12,10 +12,11 @@ main{
   height: 100%;
   width: 100%;
   background-color: $basicBackground;
-  .viewContainer {
-    height: 100%;
-    width: 100%;
-  }
+}
+
+.viewContainer{
+  height: 100%;
+  width: 100%;
 }
 
 .langBtns{

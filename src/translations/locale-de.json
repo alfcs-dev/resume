@@ -1,13 +1,17 @@
 {
-  "GENERAL": {
-    "MENU":"MENU",
-    "BTNS": {
-       "LANGUAGES": "SPRACHE"
+  "general": {
+    "menu":{
+      "title": "Menu"
+    },
+    "btns": {
+       "languages": "Lenguaje",
+       "contact": "Kontaktiere mich!"
     }
   },
-  "HOME":{
-  	"INFO":{
-  		"TITLE": "WILLKOMMEN!"
-  	}
+  "home":{
+    "info":{
+      "title": "ALFREDO CASTAÑEDA SIERRA",
+      "subTitle": "Web Entwrinkler"
+    }
   }
 }

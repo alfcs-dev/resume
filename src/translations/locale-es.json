@@ -1,13 +1,17 @@
 {
-  "GENERAL": {
-    "MENU":"MENÚ",
-    "BTNS": {
-       "LANGUAGES": "LENGUAJE"
+  "general": {
+    "menu":{
+      "title": "Menú"
+    },
+    "btns": {
+       "languages": "Lenguaje",
+       "contact": "¡Contactame!"
     }
   },
-  "HOME":{
-  	"INFO":{
-  		"TITLE": "¡BIENVENIDO!"
-  	}
+  "home":{
+    "info":{
+      "title": "ALFREDO CASTAÑEDA SIERRA",
+      "subTitle": "Desarrolador Web"
+    }
   }
 }

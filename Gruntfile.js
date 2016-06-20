@@ -153,7 +153,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['uglify:vendor', 'js', 'css', 'htmlmin',
     'imagemin', 'connect:build', 'watch'
   ]);
-  grunt.registerTask('prod', ['jsProd', 'css', 'htmlmin', 'imagemin',
-    'connect:build', 'watch'
-  ]);
+  grunt.registerTask('prod', ['jsProd', 'css', 'htmlmin', 'imagemin', 'copy:locales', 'connect:build', 'watch']);
 };

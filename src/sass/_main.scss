@@ -1,40 +1,77 @@
-html, body{
-  margin: 0;
-  padding: 0;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-main{
+main {
     height: 100%;
 }
 
-
-.mainContainer{
-  height: 100%;
-  width: 100%;
-  background-color: $basicBackground;
-  .viewContainer {
+.mainContainer {
     height: 100%;
     width: 100%;
-  }
+    background-color: $basicBackground;
+
+    .viewContainer {
+        height: 100%;
+        width: 100%;
+    }
 }
 
-.langBtns{
-  span{
-    color: $white;
-  }
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  width: 300px;
-  right: 0;
-  text-align: right;
+.langBtns {
+    span {
+        color: $white;
+    }
+
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 300px;
+    right: 0;
+    text-align: right;
 }
 
-.menuBtn{
-  position: fixed;
-  width: 200px;
-  text-align: left;
-  top:0;
-  left: 0;
-  z-index: 10;
+.menuBtn {
+    position: fixed;
+    width: 200px;
+    text-align: left;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.social {
+    height: 500px;
+    right: 25px;
+    width: 50px;
+    top: 25%;
+    position: fixed;
+
+    .md-button {
+        min-width: 65px;
+        border-radius: 50px;
+    }
+
+    .github {
+        &:hover {
+            svg {
+                fill: $black;
+            }
+        }
+    }
+    .facebook{
+        &:hover{
+            svg{
+                fill: $facebook;
+                background-color: #FFFFFF;
+            }
+        }
+    }    
+    .twitter{
+        &:hover{
+            svg{
+                fill: $twitter;
+            }
+        }
+    }
 }

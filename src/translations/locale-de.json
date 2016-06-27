@@ -1,8 +1,17 @@
 {
   "GENERAL": {
-    "MENU":"MENU",
+    "MENU": "MENU",
+    "MENUITEMS": {
+      "HOME": "HOME",
+      "ABOUT": "ÜBER MICH",
+      "EDUCATION": "AUSBILDUNG",
+      "EXPERIENCE": "ARBEITSERFAHRUNG",
+      "PROJECTS": "PROJEKTE",
+      "SKILLS": "FÄHIGKEITEN",
+      "CONTACT": "KONTAKT"
+    },
     "BTNS": {
-       "LANGUAGES": "SPRACHE"
+      "LANGUAGES": "SPRACHE"
     }
   },
   "HOME":{

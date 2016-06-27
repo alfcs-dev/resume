@@ -5,16 +5,24 @@
     .module('app')
     .controller('indexCtrl', indexCtrl);
   /* @ngInject */
-  function indexCtrl($log, $translate, $mdSidenav, $scope, $timeout) {
+  function indexCtrl($log, $translate) {
     /* jshint validthis:true */
     var vm = this;
     vm.changeLanguage = changeLanguage;
-    vm.toggleLeft = buildDelayedToggler('left');
+    vm.checkLang = checkCurrentLanguage;
 
     function changeLanguage(key) {
       $translate.use(key);
     }
 
+    function checkCurrentLanguage(lang){
+      var currentLang = localStorage['NG_TRANSLATE_LANG_KEY'];
+      if(lang === currentLang){
+        return true;
+      }else{
+        return false;
+      }
+    }
     vm.languages = [{
       language: 'Español',
       code: 'ES',
@@ -31,31 +39,5 @@
 
     
 
-    function debounce(func, wait, context) {
-      var timer;
-      return function debounced() {
-        var context = $scope,
-          args = Array.prototype.slice.call(arguments);
-        $timeout.cancel(timer);
-        timer = $timeout(function() {
-          timer = undefined;
-          func.apply(context, args);
-        }, wait || 10);
-      };
-    }
-    /**
-     * Build handler to open/close a SideNav; when animation finishes
-     * report completion in console
-     */
-    function buildDelayedToggler(navID) {
-      return debounce(function() {
-        // Component lookup should always be available since we are not using `ng-if`
-        $mdSidenav(navID)
-          .toggle()
-          .then(function() {
-            $log.debug('toggle ' + navID + ' is done');
-          });
-      }, 200);
-    }
   }
 })();

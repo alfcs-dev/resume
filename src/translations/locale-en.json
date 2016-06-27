@@ -1,6 +1,15 @@
 {
   "GENERAL": {
     "MENU":"MENU",
+    "MENUITEMS":{
+      "HOME" : "HOME",
+      "ABOUT" : "ABOUT ME",
+      "EDUCATION": "EDUCATION",
+      "EXPERIENCE": "WORK EXPERIENCE", 
+      "PROJECTS" : "PROJECTS",
+      "SKILLS" : "SKILLS",
+      "CONTACT" : "CONTACT"
+    },
     "BTNS": {
        "LANGUAGES": "LANGUAGE"
     }

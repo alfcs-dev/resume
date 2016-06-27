@@ -5,3 +5,4 @@ dist/*
 .tmpjs/*
 .tmpcss/*
 .bowerrc
+.sublime-grunt.cache

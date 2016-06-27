@@ -4,7 +4,6 @@
 
   function configFn($stateProvider, $urlRouterProvider, $locationProvider) {
     var viewsPath = 'dist/views/';
-    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
     $stateProvider.state('site', {
         abstract: true,
@@ -21,6 +20,13 @@
         controllerAs: 'vm',
         ncyBreadcrumb: {
           skip: 'Home Page'
+        },
+      }).state('work', {
+        parent: 'site',
+        url: '/work',
+        templateUrl: viewsPath + 'work.html',
+        ncyBreadcrumb: {
+          skip: 'Work'
         },
       });
   }

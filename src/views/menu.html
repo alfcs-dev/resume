@@ -1,0 +1,36 @@
+<div class="menuBtn">
+  <md-button class="md-fab md-primary"  ng-click="vm.toggleLeft()">
+  <md-icon md-font-set="material-icons">menu</md-icon>
+  </md-button>
+</div>
+<md-sidenav class="md-sidenav-left" md-component-id="left"
+md-disable-backdrop
+md-whiteframe="4">
+<md-toolbar class="md-hue-2">
+<div class="md-toolbar-tools">
+  <h2>
+  <span>{{'MENU' | translate}}</span>
+  </h2>
+  <span flex></span>
+  <md-button class="md-icon-button" ng-click="vm.close()">
+  <md-icon md-font-set="material-icons">clear</md-icon>
+  </md-button>
+</div>
+</md-toolbar>
+<md-content>
+<md-list flex>
+<md-list-item class="md-3-line" ng-repeat="menuItem in vm.menu" ng-click="vm.goToSection(menuItem.link)">
+<div class="md-avatar" ng-if="menuItem.icon !== ''">
+  <md-button class="md-icon-button">
+  <md-icon md-font-set="material-icons">{{menuItem.icon}}</md-icon>
+  </md-button>
+</div>
+<div class="md-list-item-text" layout="column" >
+  <h3>{{ 'GENERAL.MENUITEMS.' + menuItem.name  | translate}}</h3>
+</div>
+<md-divider></md-divider>
+</md-list-item>
+
+<md-list>
+</md-content>
+</md-sidenav>

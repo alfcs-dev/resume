@@ -1,17 +1,24 @@
 {
   "general": {
-    "menu":{
-      "title": "Menú"
+    "menu": "Menu",
+    "menuitems": {
+      "home": "Home",
+      "about": "Acerca de mi",
+      "education": "Educación",
+      "experience": "Experiencía",
+      "projects": "Proyectos",
+      "skills": "Habilidades",
+      "contact": "Contacto"
     },
     "btns": {
-       "languages": "Lenguaje",
-       "contact": "¡Contactame!"
+      "languages": "Lenguaje"
     }
   },
-  "home":{
-    "info":{
+  "home": {
+    "info": {
       "title": "ALFREDO CASTAÑEDA SIERRA",
-      "subTitle": "Desarrolador Web"
+      "subTitle": "Desarrolador Web",
+      "summary": "I am a full-time web apps developer, with great passion about new \n technologies, especially those connected to web applications development and the healthcare industry."
     }
   }
 }

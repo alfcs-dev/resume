@@ -1,11 +1,17 @@
 {
-  "general": {
-    "menu":{
-      "title": "Menu"
+ "general": {
+    "menu": "Menu",
+    "menuitems": {
+      "home": "Home",
+      "about": "Über mich",
+      "education": "Ausbildung",
+      "experience": "Arbeitserfahrung",
+      "projects": "Projekte",
+      "skills": "Fähigkeiten",
+      "contact": "Kontakt"
     },
     "btns": {
-       "languages": "Lenguaje",
-       "contact": "Kontaktiere mich!"
+      "languages": "Sprache"
     }
   },
   "home":{

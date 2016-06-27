@@ -6,42 +6,20 @@
     <link rel="stylesheet" href="dist/css/styles.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <base href="/" />
   </head>
   <body>
-    <nav ng-controller="navBarCtrl as vm">
-      <md-sidenav
-      class="md-sidenav-left"
-      md-component-id="left"
-      md-disable-backdrop
-      md-whiteframe="4">
-        <md-toolbar class="md-hue-2">
-          <div class="md-toolbar-tools">
-            <h2>
-              <span>{{'general.menu.title' | translate}}</span>
-            </h2>
-            <span flex></span>
-            <md-button class="md-icon-button" ng-click="vm.close()">
-              <md-icon md-font-set="material-icons">clear</md-icon>
-            </md-button>
-          </div>
-        </md-toolbar>
-
-      </md-sidenav>
-    </nav>
-    <main layout="column" flex ng-controller="indexCtrl as vm">
-      <div class="menuBtn">
-        <md-button class="md-fab md-mini md-primary"  ng-click="vm.toggleLeft()">
-            <md-icon md-font-set="material-icons">menu</md-icon>
-        </md-button>
-      </div>
-      <div class="langBtns">
-        <span>{{ 'general.btns.languages' | translate | uppercase}} : </span>
-        <md-button class="md-fab md-mini md-primary" ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">
-        {{lang.code}}
-        </md-button>
-      </div>
+    <main layout="row" flex ng-controller="indexCtrl as vm">
+    <div class="langBtns">
+      <span>{{ 'general.btns.languages' | translate}} : </span>
+      {{vm.languagess}}
+      <md-button ng-class="{'md-warn' : vm.checkLang(lang.shortName)}" class="md-fab md-mini md-primary" ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">
+      {{lang.code}}
+      </md-button>
+    </div>
+    <menu-display></menu-display>
+    <section class="mainContainer">
       <div class="viewContainer" ui-view></div>
       <div class="bottom-sheet-demo inset" >
       <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">{{'general.btns.contact' | translate}}</md-button>
@@ -49,6 +27,26 @@
 
 
     </main>
+    <section class="social" hide-xs >
+      <md-button ng-href="http://github.com/hobbit1mx" target="_blank" aria-label="github profile">
+      <md-icon class="github" md-svg-src="dist/img/github.svg"></md-icon>
+      </md-button>
+      <md-button class="twitter" ng-href="http://twitter.com/alf_castaneda" target="_blank" aria-label="twitter profile">
+      <md-icon md-svg-src="dist/img/twitter.svg"></md-icon>
+      </md-button>
+      <md-button class="facebook" ng-href="http://facebook.com/alfcastaneda" target="_blank" aria-label="facebook profile">
+      <md-icon md-svg-src="dist/img/facebook.svg"></md-icon>
+      </md-button>
+      <md-button class="linkedin" ng-href="https://linkedin.com/in/alfcastaneda" target="_blank" aria-label="linkedin profile">
+      <md-icon md-svg-src="dist/img/linkedin.svg"></md-icon>
+      </md-button>
+      <!--<md-button class="skype"  target="_blank" aria-label="skype profile">
+      <md-icon md-svg-src="dist/img/skype.svg"></md-icon>
+      </md-button>-->
+      <md-button class="gplus" ng-href="https://plus.google.com/114661432387687694369/posts" target="_blank" aria-label="google plus profile">
+      <md-icon md-svg-src="dist/img/gplus.svg"></md-icon>
+      </md-button>
+    </section>
     <script src="dist/js/vendor.js"></script>
     <script src="dist/js/app.min.js"></script>
   </body>

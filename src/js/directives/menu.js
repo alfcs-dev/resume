@@ -26,50 +26,16 @@
 
         function link(scope, element, attrs) {}
     }
-    MenuDisplayCtrl.$inject = ['$mdSidenav', '$scope', '$timeout', '$log', '$state'];
+    MenuDisplayCtrl.$inject = ['$log', '$scope','$state', 'menuService'];
     /* @ngInject */
-    function MenuDisplayCtrl($mdSidenav, $scope, $timeout, $log, $state) {
+    function MenuDisplayCtrl($log,$scope, $state, menuService) {
         var vm = this;
-        vm.close = close;
+        
         vm.goToSection = changeState;
-        vm.toggleLeft = buildDelayedToggler('left');
+        vm.close = menuService.close;
+        vm.toggleLeft = menuService.openMenu('left', $scope);
 
 
-        function debounce(func, wait, context) {
-            var timer;
-            return function debounced() {
-                var context = $scope,
-                    args = Array.prototype.slice.call(arguments);
-                $timeout.cancel(timer);
-                timer = $timeout(function() {
-                    timer = undefined;
-                    func.apply(context, args);
-                }, wait || 10);
-            };
-        }
-        /**
-         * Build handler to open/close a SideNav; when animation finishes
-         * report completion in console
-         */
-        function buildDelayedToggler(navID) {
-            return debounce(function() {
-                // Component lookup should always be available since we are not using `ng-if`
-                $mdSidenav(navID)
-                    .toggle()
-                    .then(function() {
-                        $log.debug('toggle ' + navID + ' is done');
-                    });
-            }, 200);
-        }
-
-
-
-        function close() {
-            // Component lookup should always be available since we are not using `ng-if`
-            $mdSidenav('left').close().then(function() {
-                $log.debug('close LEFT is done');
-            });
-        }
 
         function changeState(section){
             $state.go(section);
@@ -77,31 +43,31 @@
         }
 
         vm.menu = [{
-            name: 'HOME',
+            name: 'home',
             icon: 'home',
             link: 'home'
 
         }, {
-            name: 'ABOUT',
+            name: 'about',
             icon: 'person',
             link: ''
 
         }, {
-            name: 'EDUCATION',
+            name: 'education',
             icon: 'school',
             link: ''
 
         }, {
-            name: 'EXPERIENCE',
+            name: 'experience',
             icon: 'work',
             link: 'work'
 
         }, {
-            name: 'SKILLS',
+            name: 'skills',
             icon: 'build',
             link: ''
         }, {
-            name: 'CONTACT',
+            name: 'contact',
             icon: 'send',
             link: ''
         } ];

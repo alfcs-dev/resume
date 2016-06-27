@@ -14,18 +14,12 @@
     <div class="langBtns">
       <span>{{ 'general.btns.languages' | translate}} : </span>
       {{vm.languagess}}
-      <md-button ng-class="{'md-warn' : vm.checkLang(lang.shortName)}" class="md-fab md-mini md-primary" ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">
-      {{lang.code}}
-      </md-button>
+      <md-button ng-class="{'md-warn' : vm.checkLang(lang.shortName)}" class="md-fab md-mini md-primary" 
+      ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">  {{lang.code}}  </md-button>
     </div>
     <menu-display></menu-display>
     <section class="mainContainer">
       <div class="viewContainer" ui-view></div>
-      <div class="bottom-sheet-demo inset" >
-      <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet()">{{'general.btns.contact' | translate}}</md-button>
-      </div>
-
-
     </main>
     <section class="social" hide-xs >
       <md-button ng-href="http://github.com/hobbit1mx" target="_blank" aria-label="github profile">

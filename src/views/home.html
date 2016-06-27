@@ -1,11 +1,17 @@
 <section class="introContainer">
-  <div class="mainTitle" layout-padding>
-    <img ng-src="dist/img/beard.jpg">
+  <div class="avatar">
+      <img ng-src="dist/img/beard.jpg">
+  </div>
+  <div class="mainTitle">
     <h1 translate="home.info.title"></h1>
     <h2 translate="home.info.subTitle"></h2>
   </div>
   <div class="summary">
-    <p>{{"home.info.summary" | translate}}</p>
+    <p>{{"home.info.summary1" | translate}}</p>
+    <p>{{"home.info.summary2" | translate}}</p>
+  </div>
+  <div class="menuHomeBtn">
+    <md-button class="md-raised md-primary" ng-click="vm.openMenu()">{{'general.btns.menuHome' | translate}}</md-button>
   </div>
 </section>
 

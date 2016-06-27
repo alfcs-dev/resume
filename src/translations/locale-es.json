@@ -1,6 +1,6 @@
 {
   "general": {
-    "menu": "Menu",
+    "menuTitle": "Menú",
     "menuitems": {
       "home": "Home",
       "about": "Acerca de mi",
@@ -11,14 +11,16 @@
       "contact": "Contacto"
     },
     "btns": {
-      "languages": "Lenguaje"
+      "languages": "Lenguaje",
+      "menuHome": "!Conóceme!"
     }
   },
   "home": {
     "info": {
       "title": "ALFREDO CASTAÑEDA SIERRA",
       "subTitle": "Desarrolador Web",
-      "summary": "I am a full-time web apps developer, with great passion about new \n technologies, especially those connected to web applications development and the healthcare industry."
+      "summary1": "Soy un programador de aplicaciones web con gran pasión acerca de nuevas tecnologías, especialmente aquellas relacionadas con el desarrollo web y la industria de la salud.",
+      "summary2": "Navega a través de mi sitio para saber más de mí, mi trabajo, y los proyectos en los que participado."
     }
   }
 }

@@ -1,6 +1,6 @@
 {
  "general": {
-    "menu": "Menu",
+    "menuTitle": "Menu",
     "menuitems": {
       "home": "Home",
       "about": "Über mich",
@@ -11,13 +11,16 @@
       "contact": "Kontakt"
     },
     "btns": {
-      "languages": "Sprache"
+      "languages": "Sprache",
+      "menuHome": "Kennen mich!"
     }
   },
   "home":{
     "info":{
       "title": "ALFREDO CASTAÑEDA SIERRA",
-      "subTitle": "Web Entwrinkler"
+      "subTitle": "Web Entwrinkler",
+      "summary1": "I am a full-time web apps developer, with great passion about new \n technologies, especially those connected to web applications development and the healthcare industry.",
+      "summary2": "Navigate through this website to learn more about me, my experience and some of the projects I have been part of."
     }
   }
 }

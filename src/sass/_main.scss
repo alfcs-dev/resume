@@ -73,5 +73,28 @@ main {
                 fill: $twitter;
             }
         }
+    }     
+    .skype{
+        &:hover{
+            svg{
+                fill: $skype;
+                background-color: #FFFFFF;
+            }
+        }
+    }    
+    .linkedin{
+        &:hover{
+            svg{
+                fill: $linkedin;
+                background-color: #FFFFFF;
+            }
+        }
+    }    
+    .gplus{
+        &:hover{
+            svg{
+                fill: $gplus;
+            }
+        }
     }
 }

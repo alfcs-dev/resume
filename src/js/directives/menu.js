@@ -50,12 +50,12 @@
         }, {
             name: 'about',
             icon: 'person',
-            link: ''
+            link: 'about'
 
         }, {
             name: 'education',
             icon: 'school',
-            link: ''
+            link: 'education'
 
         }, {
             name: 'experience',
@@ -65,11 +65,11 @@
         }, {
             name: 'skills',
             icon: 'build',
-            link: ''
+            link: 'skills'
         }, {
             name: 'contact',
             icon: 'send',
-            link: ''
+            link: 'contact'
         } ];
 
     }

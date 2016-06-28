@@ -12,8 +12,7 @@
   <body>
     <main layout="row" flex ng-controller="indexCtrl as vm">
     <div class="langBtns">
-      <span>{{ 'general.btns.languages' | translate}} : </span>
-      {{vm.languagess}}
+      <span hide-xs>{{ 'general.btns.languages' | translate}} : </span>
       <md-button ng-class="{'md-warn' : vm.checkLang(lang.shortName)}" class="md-fab md-mini md-primary" 
       ng-click="vm.changeLanguage(lang.shortName)" ng-repeat="lang in vm.languages">  {{lang.code}}  </md-button>
     </div>

@@ -19,14 +19,42 @@
         controller: 'homeCtrl',
         controllerAs: 'vm',
         ncyBreadcrumb: {
-          skip: 'Home Page'
+          label: 'Home Page'
+        },
+      }).state('about', {
+        parent: 'site',
+        url: '/about',
+        templateUrl: viewsPath + 'about.html',
+        ncyBreadcrumb: {
+          label: 'About'
+        },
+      }).state('education', {
+        parent: 'site',
+        url: '/education',
+        templateUrl: viewsPath + 'education.html',
+        ncyBreadcrumb: {
+          label: 'About'
         },
       }).state('work', {
         parent: 'site',
         url: '/work',
         templateUrl: viewsPath + 'work.html',
         ncyBreadcrumb: {
-          skip: 'Work'
+          label: 'Work'
+        },
+      }).state('skills', {
+        parent: 'site',
+        url: '/skills',
+        templateUrl: viewsPath + 'skills.html',
+        ncyBreadcrumb: {
+          label: 'Skills'
+        },
+      }).state('contact', {
+        parent: 'site',
+        url: '/contact',
+        templateUrl: viewsPath + 'contact.html',
+        ncyBreadcrumb: {
+          label: 'contact'
         },
       });
   }

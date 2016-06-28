@@ -1,0 +1,18 @@
+.aboutContainer{
+	height: 100vh;
+	.title{
+		min-height: 500px;
+		width: 100%;
+		background: url(../img/paris.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-color: $about;
+		color: $white;
+		background-position-y: -125px;
+	}
+	.content{
+		@media screen and (min-width: $small) {
+			max-width: 75%;
+		}
+	}
+}

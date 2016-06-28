@@ -5,10 +5,10 @@
 		.module('app')
 		.factory('menuService', menuService);
 
-	menuService.$inject = ['$mdSidenav', '$timeout', '$state'];
+	menuService.$inject = ['$mdSidenav', '$timeout', '$state', '$log', '$window'];
 
 	/* @ngInject */
-	function menuService($mdSidenav, $timeout, $state) {
+	function menuService($mdSidenav, $timeout, $state, $log, $window) {
 		var service = {
 			openMenu: openMenu,
 			close: close,
@@ -19,13 +19,15 @@
 		return service;
 
 		////////////////
-		
+
 		function openMenu(navID, scope) {
 			return debounce(function() {
 				// Component lookup should always be available since we are not using `ng-if`
 				$mdSidenav(navID)
 					.toggle()
-					.then(function() {});
+					.then(function() {
+						$window.scrollTo(0,0);
+					});
 			}, 200, scope);
 		}
 
@@ -43,20 +45,19 @@
 
 
 
-
-        function changeState(section){
-            $state.go(section);
-            close();
-        }
-
+		function changeState(section) {
+			$state.go(section);
+			close();
+		}
 
 
-        function close() {
-            // Component lookup should always be available since we are not using `ng-if`
-            $mdSidenav('left').close().then(function() {
-                $log.debug('close LEFT is done');
-            });
-        }
+
+		function close() {
+			// Component lookup should always be available since we are not using `ng-if`
+			$mdSidenav('left').close().then(function() {
+				$log.debug('close LEFT is done');
+			});
+		}
 
 	}
 })();

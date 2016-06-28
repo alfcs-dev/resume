@@ -1,55 +1,82 @@
-.introContainer{
-  	@media screen and (min-width: $small) {
-  		background-position: center; 
-		background-attachment: fixed;
-  	}
-	min-height: 100vh;
-	display: flex;
-	background: url(../img/back-pers.jpg);
-	flex-direction: column;
-	justify-content: center;
-	.avatar{
-		height: 300px;
-		text-align: center;
-		img{
-			max-width: 250px;
-			border-radius: 150px;
+.introContainer {
+    @media screen and (min-width: $small) {
+        background-position: center;
+        background-attachment: fixed;
+        .avatar{
+        	height: 300px;
+        }
+    }    
+    @media screen and (max-width: $small) {
+		padding-top: 50px;
+		.avatar{
+			height: 230px;
+			img{
+				width: 215px;
+			}
 		}
-	}
-	.menuHomeBtn{
-		align-self:center;
-	}
+    }
+    min-height: 100vh;
+    display: flex;
+    background: url(../img/back-pers.jpg);
+    flex-direction: column;
+    justify-content: center;
+
+    .avatar {    
+        text-align: center;
+        img {
+            max-width: 250px;
+            border-radius: 150px;
+        }
+    }
+
+    .menuHomeBtn {
+        align-self: center;
+    }
 }
 
-.mainTitle{
-	font-family: $font;
-	text-align: center;
-	min-height: 185px;
-	h1{
-		font-size: 2em;
-	}
-	h2{
-		font-size: 1.75em;
-    	font-style: italic;
-	}
-	color: $white;
+.mainTitle {
+    font-family: $font;
+    text-align: center;
+    min-height: 185px;
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+        font-style: italic;
+    }
+
+    color: $white;
 }
 
-.summary{
-	color: $white;
-	 min-height: 275px;
-	@media screen and (max-width: $small) {
-	    width: 100%;
-  	}	
-  	@media screen and (min-width: $small) {
-	    width: 50%;
-	    align-self: center;
-  	}
+.summary {
+    color: $white;
+    min-height: 275px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
+    p{
+    	padding-left: 5px;
+    	padding-right: 5px;
+    }
+    @media screen and (max-width: $small) {
+        width: 100%;
+    }
 
+    @media screen and (min-width: $small) {
+        width: 50%;
+        align-self: center;
+    }
 }
 
-  // width: 100%;
-  // md-content {
-  //   color: $white;
-  //   background: none;
-  // }
+// width: 100%;
+// md-content {
+//   color: $white;
+//   background: none;
+// }

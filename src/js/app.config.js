@@ -10,7 +10,7 @@
       prefix: 'dist/translations/locale-',
       suffix: '.json'
     });
-    $translateProvider.useSanitizeValueStrategy('escape');
+    //$translateProvider.useSanitizeValueStrategy('sanitize');
     $translateProvider.preferredLanguage('en');
 
     $translateProvider.useLocalStorage();

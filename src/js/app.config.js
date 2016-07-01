@@ -7,7 +7,7 @@
     $translateProvider.fallbackLanguage('en');
 
     $translateProvider.useStaticFilesLoader({
-      prefix: 'dist/translations/locale-',
+      prefix: 'dist/resources/translations/locale-',
       suffix: '.json'
     });
     //$translateProvider.useSanitizeValueStrategy('sanitize');

@@ -6,3 +6,4 @@ dist/*
 .tmpcss/*
 .bowerrc
 .sublime-grunt.cache
+html/*

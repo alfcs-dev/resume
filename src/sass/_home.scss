@@ -24,6 +24,7 @@
     .avatar {    
         text-align: center;
         img {
+            border: solid 5px $white;
             max-width: 250px;
             border-radius: 150px;
         }
@@ -55,7 +56,7 @@
     color: $white;
     min-height: 275px;
     color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.55);
     text-align: center;
     display: flex;
     flex-direction: column;

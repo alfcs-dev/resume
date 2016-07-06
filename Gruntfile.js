@@ -125,7 +125,7 @@ module.exports = function(grunt) {
       locales: {
         files: [{
           expand: true,
-          src: ['translations/*.json'],
+          src: ['resources/translations/*.json'],
           dest: 'dist/',
           cwd: 'src'
         }]

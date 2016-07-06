@@ -14,3 +14,52 @@
         }
     }
 }
+
+.parallax {
+    .bg_about {
+        position: relative;
+        height: 50vh;
+        background-attachment: fixed;
+        background-position: center -157px;
+        background-repeat: no-repeat;
+        background-color: $about;
+        background-image: url(../img/paris.jpg);
+        display: flex;
+        align-items: center;
+
+        .md-display-3 {
+            text-align: center;
+            font-style: italic;
+            color: $white;
+            padding: 5px;
+        }
+    }
+}
+
+article {
+     @media screen and (max-width: $small) {
+        .text-container {
+            width: 95vw;
+        }
+     }
+
+     @media screen and (min-width: $small && max-width $md){
+        .text-container{
+            width: 80vw;
+        }
+     }
+
+     @media screen and (min-width: $md){
+        .text-container{
+            width: 60vw;
+        }
+     }
+
+     .text-container{
+        margin: 0 auto;
+        padding: 0px 10px 0px 10px;
+     }
+
+
+}
+

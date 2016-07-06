@@ -34,9 +34,15 @@ module.exports = function(grunt) {
           'dist/js/vendor.js': [require('wiredep')().js]
         }
       },
+      vendorProd: {
+        files: {
+          'html/dist/js/vendor.js': [require('wiredep')().js]
+        }
+      },
+
       build: {
         files: {
-          'dist/js/app.min.js': ['.tmpjs/src/js/app.module.annotated.js',
+          'html/dist/js/app.min.js': ['.tmpjs/src/js/app.module.annotated.js',
             '.tmpjs/src/js/app.config.annotated.js',
             '.tmpjs/src/js/**/*.annotated.js'
           ]
@@ -58,6 +64,11 @@ module.exports = function(grunt) {
         files: {
           'dist/css/styles.min.css': ['.tmpcss/styles.css']
         }
+      },
+      prod: {
+        files: {
+          'html/dist/css/styles.min.css': ['.tmpcss/styles.css']
+        }
       }
     },
     htmlmin: {
@@ -72,6 +83,14 @@ module.exports = function(grunt) {
           src: '**/*.html',
           dest: 'dist/views'
         }]
+      },
+      prod: {
+        files: [{
+          expand: true,
+          cwd: 'src/views',
+          src: '**/*.html',
+          dest: 'html/dist/views'
+        }]
       }
     },
     imagemin: {
@@ -81,6 +100,14 @@ module.exports = function(grunt) {
           src: '**/*',
           cwd: 'src/img',
           dest: 'dist/img'
+        }]
+      },
+      prod: {
+        files: [{
+          expand: true,
+          src: '**/*',
+          cwd: 'src/img',
+          dest: 'html/dist/img'
         }]
       }
     },
@@ -117,7 +144,7 @@ module.exports = function(grunt) {
         tasks: ['htmlmin']
       },
       locales: {
-        files: ['src/translations/*.json'],
+        files: ['src/resources/translations/*.json'],
         tasks: ['copy:locales']
       }
     },
@@ -129,7 +156,20 @@ module.exports = function(grunt) {
           dest: 'dist/',
           cwd: 'src'
         }]
+      },
+      resourceProd: {
+        files: [{
+          expand: true,
+          src: ['resources/translations/*.json'],
+          dest: 'html/dist/',
+          cwd: 'src'
+        }, {
+          src: ['index.html'],
+          filter: 'isFile',
+          dest: 'html/'
+        }]
       }
+
     }
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -148,10 +188,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-angular-templates');
 
   grunt.registerTask('js', ['ngAnnotate', 'concat:dev', 'clean:js']);
-  grunt.registerTask('jsProd', ['ngAnnotate', 'uglify', 'clean:js']);
-  grunt.registerTask('css', ['sass', 'cssmin', 'clean:css']);
-  grunt.registerTask('default', ['uglify:vendor', 'js', 'css', 'htmlmin',
-    'imagemin', 'connect:build', 'watch'
+  grunt.registerTask('jsProd', ['ngAnnotate', 'uglify:vendorProd', 'uglify:build', 'clean:js']);
+  grunt.registerTask('css', ['sass', 'cssmin:dist', 'clean:css']);
+  grunt.registerTask('cssProd', ['sass', 'cssmin:prod', 'clean:css']);
+  grunt.registerTask('default', ['uglify:vendor', 'js', 'css', 'htmlmin:build',
+    'imagemin:dev', 'connect:build', 'watch'
   ]);
-  grunt.registerTask('prod', ['jsProd', 'css', 'htmlmin', 'imagemin', 'copy:locales', 'connect:build', 'watch']);
+  grunt.registerTask('prod', ['jsProd', 'cssProd', 'htmlmin:prod', 'imagemin:prod', 'copy:resourceProd']);
 };

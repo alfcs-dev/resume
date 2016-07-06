@@ -1,5 +1,5 @@
-<section class="introContainer">
-  <div class="avatar">
+<section class="introContainer" layout="row" layout-xs="column" layout-align="center center">
+<!--   <div class="avatar">
       <img ng-src="dist/img/beard.jpg">
   </div>
   <div class="mainTitle">
@@ -12,6 +12,13 @@
   </div>
   <div class="menuHomeBtn">
     <md-button class="md-raised md-primary" ng-click="vm.openMenu()">{{'general.btns.menuHome' | translate}}</md-button>
+  </div> -->
+  <div class="profilePic"  layout="row" layout-align="center center">
+    <img ng-src="dist/img/beard.jpg">
+  </div>
+  <div layout="column"  layout-align="center center">
+     <div class="md-display-3" translate="home.info.title"></div>
+     <div class="md-display-4" translate="home.info.subTitle"></div>
   </div>
 </section>
 

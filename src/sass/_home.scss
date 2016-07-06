@@ -16,11 +16,17 @@
 		}
     }
     min-height: 100vh;
-    display: flex;
+    /*display: flex;*/
     background: url(../img/back-pers.jpg);
-    flex-direction: column;
-    justify-content: center;
-
+    /*flex-direction: column;
+    justify-content: center;*/
+    .profilePic{
+        img{
+            border: solid 5px $white;
+            border-radius: 150px;
+            max-width: 300px;
+        }
+    }
     .avatar {    
         text-align: center;
         img {
